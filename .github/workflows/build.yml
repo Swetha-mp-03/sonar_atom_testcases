@@ -3,10 +3,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "atom_testcases/**"
   pull_request:
     types: [opened, synchronize, reopened]
-    paths:
-      - "Sonar_Cloud/**"
 jobs:
   sonarqube:
     name: SonarQube
@@ -28,15 +28,11 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Test and coverage
-        run: npm run test -- --coverage
+        run: npm run test-coverage
 
-        steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Install dependencies
-        working-directory: ./sonar_atom_testcases
-        run: npm install --legacy-peer-deps
+      # - name: Install dependencies
+      #   working-directory: ./sonar_atom_testcases
+      #   run: npm install --legacy-peer-deps
 
       - name: SonarQube Scan
         with:
