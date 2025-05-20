@@ -1,4 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+import "@testing-library/dom";
 import AppButton from "../Button/index";
 import { vi } from "vitest"; // this line ensures no TS errors
 
