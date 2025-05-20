@@ -11,6 +11,9 @@ jobs:
   sonarqube:
     name: SonarQube
     runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: atom-testcases
     steps:
       - uses: actions/checkout@v4
         with:
