@@ -1,5 +1,6 @@
 // Input.test.tsx
 import { render, screen } from "@testing-library/react";
+import "@testing-library/dom";
 import Input from "../InputField/index";
 
 describe("Input Atom", () => {
